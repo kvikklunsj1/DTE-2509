@@ -1,0 +1,65 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-image:url("../images/skycut.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:rgba(238,245,251,255);
+    
+}
+
+#header {
+    float: left;
+    display: block;
+    padding-left: 10px;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategray;
+    text-align: right;
+    
+}
+
+.navbar li {
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    display: inline-block;
+    padding: 20px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    padding-top: 10px;
+    top: 22px;
+    left: -44px;
+}
+
+.navbar li:hover{
+    background-color: rgb(18, 31, 31);
+}
+
+article {
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 100;
+}
+
+
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkslategrey;
+    text-align: center;
+}
