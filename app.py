@@ -1,14 +1,28 @@
-from flask import Flask
-from views import views
+from flask import Flask, render_template
+from flask_mysqldb import MySQL
 
-from flaskext.mysql import MySQL
-mysql = MySQL()
-#mysql.init_app(app)
 
 
 app = Flask(__name__)
-app.register_blueprint(views, url_prefix="/")
-app.config['MYSQL_HOST'] = 
- 
-if __name__ == '__main__':
+
+app.config['MYSQL_HOST'] = 'kark.uit.no'
+app.config['MYSQL_USER'] = 'stud_v23_mki061'
+app.config['MYSQL_PASSWORD'] = 'kaffekobberhaug'
+app.config['MYSQL_DB'] = 'stud_v23_mki061'
+
+mysql = MySQL(app)
+
+
+
+
+@app.route('/')
+def Home():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM python")
+    fetchdata = cur.fetchall()
+    cur.close()
+    return render_template('index.html', data = fetchdata)
+
+
+if __name__ == "__main__":
     app.run(debug=True)
